@@ -1,9 +1,9 @@
-package com.hpsgts.springquartz.service;
+package com.hpsgts.springquartz.qz.service;
 
-import com.hpsgts.springquartz.bo.ScheduleJob;
-import com.hpsgts.springquartz.dto.ScheduleJobReporstity;
-import com.hpsgts.springquartz.quartz.QuartzJobFactory;
-import com.hpsgts.springquartz.quartz.QuartzJobFactoryDisallowConcurrentExecution;
+import com.hpsgts.springquartz.qz.bo.ScheduleJob;
+import com.hpsgts.springquartz.qz.dto.ScheduleJobReporstity;
+import com.hpsgts.springquartz.qz.quartz.QuartzJobFactory;
+import com.hpsgts.springquartz.qz.quartz.QuartzJobFactoryDisallowConcurrentExecution;
 import org.quartz.*;
 import org.quartz.impl.matchers.GroupMatcher;
 import org.slf4j.Logger;

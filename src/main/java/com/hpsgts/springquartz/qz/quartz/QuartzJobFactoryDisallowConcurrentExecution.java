@@ -1,4 +1,4 @@
-package com.hpsgts.springquartz.quartz;
+package com.hpsgts.springquartz.qz.quartz;
 
 import org.apache.log4j.Logger;
 import org.quartz.DisallowConcurrentExecution;

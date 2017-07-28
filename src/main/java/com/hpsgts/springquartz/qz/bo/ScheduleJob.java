@@ -1,4 +1,4 @@
-package com.hpsgts.springquartz.bo;
+package com.hpsgts.springquartz.qz.bo;
 
 import javax.persistence.*;
 import java.util.Date;

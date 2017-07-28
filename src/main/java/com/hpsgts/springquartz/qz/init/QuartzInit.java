@@ -1,4 +1,4 @@
-package com.hpsgts.springquartz.init;
+package com.hpsgts.springquartz.qz.init;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,10 +10,11 @@ import org.springframework.stereotype.Component;
 @Component // 此注解必加
 @EnableScheduling // 此注解必加
 public class QuartzInit {
-    private static final Logger LOGGER =  LoggerFactory.getLogger(QuartzInit.class);
+    private static final Logger logger =  LoggerFactory.getLogger(QuartzInit.class);
 
     public void init(){
-        System.out.println("启动初始化定时任务");
+        logger.info("启动初始化定时任务=========================开始初始化【QuartzInit.init】");
+        logger.info("启动初始化定时任务=========================初始化任务池结束【QuartzInit.init】");
 
     }
 }

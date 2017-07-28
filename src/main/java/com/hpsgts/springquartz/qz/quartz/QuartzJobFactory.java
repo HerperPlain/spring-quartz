@@ -1,6 +1,6 @@
-package com.hpsgts.springquartz.quartz;
+package com.hpsgts.springquartz.qz.quartz;
 
-import com.hpsgts.springquartz.bo.ScheduleJob;
+import com.hpsgts.springquartz.qz.bo.ScheduleJob;
 import com.hpsgts.springquartz.util.TaskUtils;
 import org.apache.log4j.Logger;
 import org.quartz.Job;
