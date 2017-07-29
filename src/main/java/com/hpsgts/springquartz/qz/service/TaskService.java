@@ -91,7 +91,7 @@ public class TaskService {
     /**
      * 添加任务
      *
-     * @param scheduleJob
+     * @param job
      * @throws SchedulerException
      */
     public void addJob(ScheduleJob job) throws SchedulerException {
@@ -100,7 +100,7 @@ public class TaskService {
         }
 
 //        Scheduler scheduler = schedulerFactoryBean.getScheduler();
-        log.debug(scheduler + ".......................................................................................add");
+        log.info(scheduler + ".......................................................................................add");
         TriggerKey triggerKey = TriggerKey.triggerKey(job.getJobName(), job.getJobGroup());
 
         CronTrigger trigger = (CronTrigger) scheduler.getTrigger(triggerKey);
@@ -132,15 +132,14 @@ public class TaskService {
 
     @PostConstruct
     public void init() throws Exception {
-
-//        Scheduler scheduler = schedulerFactoryBean.getScheduler();
-
-//		// 这里获取任务信息数据
-//		List<ScheduleJob> jobList = scheduleJobMapper.getAll();
-//
-//		for (ScheduleJob job : jobList) {
-//			addJob(job);
-//		}
+		// 这里获取任务信息数据
+		List<ScheduleJob> jobList = getAllTask();
+        log.info("开始初始化定时任务【TaskService.init】");
+		for (ScheduleJob job : jobList) {
+			addJob(job);
+            log.info("添加任务【{}】 到任务池中",job);
+		}
+        log.info("初始化定时任务结束 【TaskService.init】");
     }
 
     /**

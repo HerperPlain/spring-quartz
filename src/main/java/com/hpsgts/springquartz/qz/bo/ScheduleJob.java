@@ -192,4 +192,24 @@ public class ScheduleJob {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "ScheduleJob{" +
+                "jobId=" + jobId +
+                ", jobName='" + jobName + '\'' +
+                ", jobGroup='" + jobGroup + '\'' +
+                ", jobStatus='" + jobStatus + '\'' +
+                ", cronExpression='" + cronExpression + '\'' +
+                ", description='" + description + '\'' +
+                ", beanClass='" + beanClass + '\'' +
+                ", isConcurrent='" + isConcurrent + '\'' +
+                ", springId='" + springId + '\'' +
+                ", methodName='" + methodName + '\'' +
+                ", createUser='" + createUser + '\'' +
+                ", createTime=" + createTime +
+                ", updateUser='" + updateUser + '\'' +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

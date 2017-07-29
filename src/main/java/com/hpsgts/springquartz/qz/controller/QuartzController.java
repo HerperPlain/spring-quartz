@@ -36,7 +36,10 @@ public class QuartzController {
         request.setAttribute("taskList", taskList);
         return "base/task/taskList";
     }
-
+    @RequestMapping(value = "toAdd")
+    public String toAdd(){
+        return "quartz-form";
+    }
     @RequestMapping("add")
     @ResponseBody
     public RetObj taskList(HttpServletRequest request, ScheduleJob scheduleJob) {

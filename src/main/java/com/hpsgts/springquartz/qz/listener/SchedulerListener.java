@@ -3,6 +3,8 @@ package com.hpsgts.springquartz.qz.listener;
 import com.hpsgts.springquartz.qz.spring.SpringJobFactory;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
@@ -16,17 +18,12 @@ import org.springframework.stereotype.Component;
 @Component // 此注解必加
 @EnableScheduling // 此注解必加
 public class SchedulerListener implements ApplicationListener<ContextRefreshedEvent> {
+    public static Logger logger = LoggerFactory.getLogger(SchedulerListener.class);
     @Autowired
     private SpringJobFactory springJobFactory;
-    @Autowired
-    public MyScheduler myScheduler;
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        try {
-            myScheduler.scheduleJobs();
-        } catch (SchedulerException e) {
-            e.printStackTrace();
-        }
+            logger.info("==========================SchedulerListener.onApplicationEvent is running {}",event);
     }
 
     @Bean
@@ -40,7 +37,8 @@ public class SchedulerListener implements ApplicationListener<ContextRefreshedEv
 
     @Bean
     public Scheduler scheduler() {
-        return schedulerFactoryBean().getScheduler();
+        Scheduler scheduler = schedulerFactoryBean().getScheduler();
+        return scheduler;
     }
 
 }
